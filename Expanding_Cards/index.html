@@ -1,0 +1,162 @@
+<!--<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css" >
+    <title>Expanding Cards by clicking</title>
+</head>
+<body>
+    <div class="container">
+        <div class="panel active" style="background-image: url('Goku.jpg')">
+            <h3>Explore Anime</h3>
+        </div>
+        <div class="panel" style="background-image: url('naruto.jpg');">
+            <h3>Naruto</h3>
+        </div>
+        <div class="panel" style="background-image: url('naruto.jpg');">
+            <h3>Bleach</h3>
+        </div>
+        <div class="panel" style="background-image: url('naruto.jpg');">
+            <h3>Death Note</h3>
+        </div>
+        <div class="panel" style="background-image: url('naruto.jpg');">
+            <h3>One Piece</h3>
+        </div>
+        <div class="panel" style="background-image: url('naruto.jpg');">
+            <h3>Demon Slayer</h3>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>-->
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Expandable CSS Cards</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<div class="card-container">
+		<div class="card">
+			<img src="https://via.placeholder.com/300x200/FF5733/000000?text=Lion" alt="Lion">
+			<div class="card-info">
+				<h2>Lion</h2>
+			</div>
+		</div>
+
+		<div class="card">
+			<img src="https://via.placeholder.com/300x200/00C853/000000?text=Elephant" alt="Elephant">
+			<div class="card-info">
+				<h2>Elephant</h2>
+			</div>
+		</div>
+
+		<div class="card">
+			<img src="https://via.placeholder.com/300x200/FFC107/000000?text=Giraffe" alt="Giraffe">
+			<div class="card-info">
+				<h2>Giraffe</h2>
+			</div>
+		</div>
+	</div>
+
+	<script src="script.js"></script>
+</body>
+</html>
+CSS Code:
+
+css
+Copy code
+* {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	font-family: Arial, sans-serif;
+}
+
+.card-container {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+.card {
+	position: relative;
+	width: 300px;
+	height: 200px;
+	margin: 20px;
+	box-shadow: 0 0 10px rgba(0,0,0,0.2);
+	cursor: pointer;
+	overflow: hidden;
+	transition: all 0.5s ease-in-out;
+}
+
+.card:hover {
+	transform: scale(1.1);
+}
+
+.card img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.card-info {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	background-color: rgba(0,0,0,0.6);
+	color: white;
+	padding: 10px;
+	box-sizing: border-box;
+	transition: all 0.5s ease-in-out;
+	transform: translateY(100%);
+}
+
+.card:hover .card-info {
+	transform: translateY(0);
+}
+
+.card-info h2 {
+	margin: 0;
+	font-size: 24px;
+}
+JavaScript Code:
+
+js
+Copy code
+const cards = document.querySelectorAll('.card');
+
+cards.forEach(card => {
+	card.addEventListener('click', () => {
+		// Close previously expanded card
+		closeExpandedCard();
+
+		// Expand current card
+		card.classList.add('expanded');
+	});
+});
+
+function closeExpandedCard() {
+	const expandedCard = document.querySelector('.expanded');
+	if (expandedCard) {
+		expandedCard.classList.remove('expanded');
+	}
+}
+In this example, the HTML code creates a card container that contains three cards, each with an animal image and name. The CSS code styles the cards and sets up the hover and transition effects. The JavaScript code adds a click event listener to each card to close the previously expanded card and expand the current card.
+
+To use this example, create a new folder and save the HTML, CSS, and JavaScript code in separate files named "index.html", "style.css", and "script.js", respectively. Then, open the HTML file in a web browser to see the expandable CSS cards in action.
+
+
+
+
+
+
