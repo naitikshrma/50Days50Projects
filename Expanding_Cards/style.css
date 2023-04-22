@@ -1,11 +1,11 @@
-/*@import url(https://fonts.googleapis.com/css?family=Muli&display=swap');
+@import url(https://fonts.googleapis.com/css?family=Muli&display=swap');
 
 * {
     box-sizing: border-box;
 }
 
 body {
-
+    background-color: #FF4655;
     font-family: 'Muli' , sans-serif;
     display: flex;
     align-items: center;
@@ -29,7 +29,7 @@ body {
     height: 75vh;
     width: auto;
     border-radius: 50px;
-    color: #fff;
+    color: #FF4655;
     cursor: pointer;
     flex: 0.5;
     margin: 10px;
@@ -70,8 +70,10 @@ body {
     .panel:nth-last-of-type(5) {
         display: none;
     }
-}*/
+}
 
+
+/*             ChatGPT                 - .j
 
 * {
 	box-sizing: border-box;
